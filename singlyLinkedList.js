@@ -1,4 +1,4 @@
-// For creating nodes of our linked list
+// Creating a node class from where we will create new nodes for our singly linked list
 class Node {
     constructor(value){
         this.data = value;
