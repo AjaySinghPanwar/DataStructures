@@ -1,3 +1,4 @@
+// Creating a node class from where we will create new nodes for our doubly linked list
 class Node {
     constructor(value){
         this.data = value;
@@ -6,8 +7,10 @@ class Node {
     }
 }
 
+// Initialize head with null
 let head = null;
 
+// Function for forward traversal
 function forwardTraversal(){
     if(head === null){
         return;
@@ -23,6 +26,7 @@ function forwardTraversal(){
     }
 }
 
+// Function for backward traversal
 function backwardTraversal(){
      if(head === null){
         return;
@@ -44,6 +48,7 @@ function backwardTraversal(){
     }
 }
 
+// Function for inserting a node at the beginning
 function insertAtBeginning(value){
     const nodeToInsert = new Node(value);
     
@@ -60,6 +65,7 @@ function insertAtBeginning(value){
     }
 }
 
+// Function for inserting a node at the end
 function insertAtEnd(value){
     const nodeToInsert = new Node(value);
     
@@ -81,6 +87,7 @@ function insertAtEnd(value){
     }
 }
 
+// Function for searching a node
 function searchNode(key){
     let temp = head;
     
@@ -95,6 +102,7 @@ function searchNode(key){
     return false;
 }
 
+// Function for deleting a node
 function deleteNode(key){
     if(head === null){
         return;
