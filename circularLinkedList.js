@@ -6,13 +6,13 @@ class Node{
     }
 }
 
-const head = new Node(100);
-const middle = new Node(200);
-const last = new Node(300);
+// const head = new Node(100);
+// const middle = new Node(200);
+// const last = new Node(300);
 
-head.next = middle;
-middle.next = last;
-last.next = head;
+// head.next = middle;
+// middle.next = last;
+// last.next = head;
 
 // Function for traversing the circular linked list
 function traversal(){
@@ -27,5 +27,32 @@ function traversal(){
         temp = temp.next;
     }while(temp !== head);
 }
+
+// Function to insert a node at start of the circular linked list
+function insertAtBeginning(value){
+    let newNode = new Node(value);
+    
+    if(head === null){
+        newNode.next = newNode;
+        head = newNode;
+    }
+    else{
+        let last = head;
+        
+        while(last.next !== head){
+            last = last.next;
+        }
+        
+        last.next = newNode;
+        newNode.next = head;
+        head = newNode;
+    }
+}
+
+let head = null;
+
+insertAtBeginning(100);
+insertAtBeginning(200);
+insertAtBeginning(300);
 
 traversal();
