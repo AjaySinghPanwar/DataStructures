@@ -69,6 +69,25 @@ function insertAtEnd(value){
     }
 }
 
+// Function for searching a node in the given circular linked list
+function search(key){
+    if(head === null){
+        return;
+    }
+    
+    let temp = head;
+    
+    do {
+        if(temp.data === key){
+            return true;
+        }
+        
+        temp = temp.next;
+    }while(temp !== head);
+    
+    return false;
+}
+
 let head = null;
 
 insertAtBeginning(100);
@@ -77,5 +96,7 @@ insertAtBeginning(300);
 insertAtEnd(400);
 insertAtEnd(500);
 insertAtBeginning(600);
+console.log(search(400));
+console.log(search(8999));
 
 traversal();
