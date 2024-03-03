@@ -49,10 +49,33 @@ function insertAtBeginning(value){
     }
 }
 
+// Function to insert a node at end of the circular linked list
+function insertAtEnd(value){
+    let newNode = new Node(value);
+    
+    if(head === null){
+        newNode.next = newNode;
+        head = newNode;
+    }
+    else{
+        let last = head;
+        
+        while(last.next !== head){
+            last = last.next;
+        }
+        
+        last.next = newNode;
+        newNode.next = head;
+    }
+}
+
 let head = null;
 
 insertAtBeginning(100);
 insertAtBeginning(200);
 insertAtBeginning(300);
+insertAtEnd(400);
+insertAtEnd(500);
+insertAtBeginning(600);
 
 traversal();
