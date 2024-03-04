@@ -16,7 +16,7 @@ function traversal(){
     
     let temp = head;
     
-    console.log("Traversing forward");
+    console.log("Traversing...");
     
     while(temp !== null){
         console.log(temp.data);
