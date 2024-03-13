@@ -32,6 +32,22 @@ function inorderTraversal(root){
     inorderTraversal(root.right);
 }
 
+// Function for searching a key
+function searchNode(root, value){
+    if(root === null){
+        return false;
+    }
+    else if(root.key === value){
+        return true;
+    }
+    else if (value > root.key){
+        return searchNode(root.right, value);
+    }
+    else {
+        return searchNode(root.left, value);
+    }
+}
+
 let root = null;
 console.log("Inserting node ", 100)
 root = insertNode(root, 100);
@@ -41,3 +57,4 @@ console.log("Inserting node ", 300)
 root = insertNode(root, 300);
 
 inorderTraversal(root);
+console.log(searchNode(root, 500));
