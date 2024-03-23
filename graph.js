@@ -1,11 +1,14 @@
-# Graph can be represented as G(V, E) where V is the vertices and E is the edges
-## V != {} and E = {}
-## Types of Graph - Undirected (Direction of edge is not present) and Directed (Direction of edge is present)
-## Degree of Graph - In degree of a Vertex (No. of edges coming into a vertex) and Out degree of a Vertex (No. of edges coming out of a vertext)
+/** Graph can be represented as G(V, E) where V is the vertices and E is the edges
+ V != {} and E = {}
+ Types of Graph - Undirected (Direction of edge is not present) and Directed (Direction of edge is present)
+ Degree of Graph - In degree of a Vertex (No. of edges coming into a vertex) and Out degree of a Vertex (No. of edges coming out of a vertext)
+ **/
 
 
-## Adjacency matrix representation of a Graph
-### An Adjacency matrix is a square matrix of N x N size where N is the number of nodes in the graph and it is used to represent the connections between the edges of a graph.
+/** Adjacency matrix representation of a Graph
+    An Adjacency matrix is a square matrix of N x N size where N is the number of nodes in the graph and it is used to represent the connections between the edges of a graph.
+**/
+
 // Function for adding an edge to the graph
 function addEdge(arr, src, dest){
     arr[src][dest] = 1;
