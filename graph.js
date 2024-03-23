@@ -58,3 +58,62 @@ removeEdge(adjacencyMatrix, 0, 1);
 removeEdge(adjacencyMatrix, 1, 2);
 
 printAdjMatrix(adjacencyMatrix);
+
+
+
+/** Adjacency list representation of a Graph
+    An adjacency list represents a graph as an array of linked lists. The index of the array represents a vertex and each element in its linked list represents the other vertices that form an edge with the vertex.
+**/
+
+class Node {
+    constructor(value){
+        this.data = value;
+        this.next = null;
+    }
+}
+
+const V = 5;
+let adjacencyList = new Array(V).fill(null);
+
+function addEdge(src, dest){
+    let newNode = new Node();
+    newNode.data = dest;
+    newNode.next = null;
+    
+    if(adjacencyList[src] === null){
+        adjacencyList[src] = newNode;
+    }
+    else{
+        let temp = adjacencyList[src];
+        
+        while(temp.next !== null){
+            temp = temp.next;
+        }
+        
+        temp.next = newNode;
+    }
+}
+
+function printAdjacencyList(){
+    for(let i = 0; i < V; ++i){
+        let temp = adjacencyList[i];
+        
+        console.log(`adjacencyList[${i}] => `);
+        
+        while(temp !== null){
+            console.log(temp.data);
+            temp = temp.next;
+        }
+    }
+}
+
+addEdge(0,1);
+addEdge(0,2);
+addEdge(0,3);
+addEdge(1,3);
+addEdge(1,4);
+addEdge(2,3);
+addEdge(3,4);
+
+console.log("Adjacency List Representation of the Graph: ");
+printAdjacencyList();
