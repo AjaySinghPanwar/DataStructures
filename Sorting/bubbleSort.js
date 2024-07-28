@@ -7,7 +7,7 @@ function bubbleSort(arr, size){
     let i, j, flag = 0;
     
     for(let i = 0; i < size - 1; ++i){
-        for(let j = 0; j < size - 1; ++j){
+        for(let j = 0; j < size - 1 - i; ++j){
             if(arr[j] > arr[j + 1]){
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
                 // If the array is already sorted, then the excution will never come inside this block, and in only one iteration we will know that we are done processing
