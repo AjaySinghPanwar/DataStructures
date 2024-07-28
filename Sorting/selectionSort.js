@@ -1,5 +1,6 @@
 // Selection sort - Repeatedly select an element (smallest / largest) and move it to the sorted position
-// TC => O(n^2), SC => O(n)
+// TC => O(n^2), SC => O(n), OSC => O(1)
+// Since OSC is constant, it is an inplace sorting algorith
 
 function selectionSort(arr, size){
     let i, j;
