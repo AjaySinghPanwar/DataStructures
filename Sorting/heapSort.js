@@ -79,6 +79,24 @@ function Heapify(arr, index, size)
         [arr[max], arr[index]] = [arr[index], arr[max]];
         Heapify(arr,max,size);
     }
+    
+    /**
+    // For min heap
+    var left = 2 * index + 1;
+    var right = left + 1;
+    var min = index;
+    
+    if(left <= size && arr[left] < arr[min])
+        min = left;
+    if(right <= size && arr[right] < arr[min])
+        min = right;
+        
+    if(index != min)
+    {
+        [arr[min], arr[index]] = [arr[index], arr[min]];
+        Heapify(arr,min,size);
+    }
+    */
 }
 
 function HeapSort(arr, size)
