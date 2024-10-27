@@ -68,10 +68,12 @@ function Heapify(arr, index, size)
     var left = 2 * index + 1;
     var right = left + 1;
     var max = index;
+    
     if(left <= size && arr[left] > arr[max])
         max = left;
     if(right <= size && arr[right] > arr[max])
         max = right;
+    
     if(index != max)
     {
         [arr[max], arr[index]] = [arr[index], arr[max]];
